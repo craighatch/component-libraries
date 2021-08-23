@@ -52,12 +52,21 @@ const MainContent = (props) => {
   const [activeIndexTab, setActiveIndexTab] = useState(0);
 
 
+
   const handleChange = (event, newValue) => {
+    // debugger;
     setActiveIndexTab(newValue);
   };
 
+  const temp = () => {
+    setActiveIndexTab(1);
+  }
+
+  console.log('activeIndexTab', activeIndexTab);
   return (
     <div className={classes.root}>
+      {false  &&  (<button onClick={temp}> click me</button>)}
+
       <div className={classes.tabContent}>
         {activeIndexTab === 0 &&
           (<div>
@@ -96,8 +105,6 @@ const MainContent = (props) => {
           ))
           }
         </Tabs>
-
-
       </div>
     </div>
   );

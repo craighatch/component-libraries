@@ -34,7 +34,7 @@ const CustomizedSnackbars = () => {
       <Button variant="outlined" onClick={handleClick}>
         Open success snackbar
       </Button>
-      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose} classes={{ root: classes.colorPink }}>
+      <Snackbar open={open} onClose={handleClose} classes={{ root: classes.colorPink }}>
         <Alert onClose={handleClose} severity="success" classes={{ message: classes.customStyles }}>
           This is a success message!
         </Alert>

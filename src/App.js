@@ -9,8 +9,8 @@ const theme = createTheme({
       dark: 'rgb(0,0,0)',
     },
     secondary: {
-      main: '#E26751',
-      //main: 'rgb(0,0,0)',
+      // main: '#E26751',
+      main: 'rgb(0,0,0)',
     },
     
   },
