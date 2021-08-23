@@ -1,5 +1,6 @@
 import { Tabs, Tab, makeStyles } from "@material-ui/core";
 import { useState } from "react";
+import TabDetails from "./tab-details.component";
 
 const tabContent = [
   {
@@ -79,34 +80,9 @@ const MainContent = (props) => {
     <div className={classes.root}>
       {/* Exercise 1:  (a)refactor this code to a reuseable component (b) use makeStyles to style like the Credera website*/}
       <div className={classes.tabContent}>
-        {activeIndexTab === 0 &&
-          (<div>
-            <div className={`${classes.text} ${classes.header}`}>{tabContent[0].header}</div>
-            <div className={`${classes.text} ${classes.title}`}>{tabContent[0].title}</div>
-            <div className={`${classes.text} ${classes.details}`}>{tabContent[0].details}</div>
-          </div>)
-        }
-        {activeIndexTab === 1 &&
-          (<div>
-            <div>{tabContent[1].header}</div>
-            <div>{tabContent[1].title}</div>
-            <div>{tabContent[1].details}</div>
-          </div>)
-        }
-        {activeIndexTab === 2 &&
-          (<div>
-            <div>{tabContent[2].header}</div>
-            <div>{tabContent[2].title}</div>
-            <div>{tabContent[2].details}</div>
-          </div>)
-        }
-        {activeIndexTab === 3 &&
-          (<div>
-            <div>{tabContent[3].header}</div>
-            <div>{tabContent[3].title}</div>
-            <div>{tabContent[3].details}</div>
-          </div>)
-        }
+        <TabDetails
+          content={tabContent[activeIndexTab]}
+        />
       </div>
       <div className={classes.tabs}>
 
