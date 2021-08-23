@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import { createTheme, ThemeProvider } from '@material-ui/core';
 import './App.css';
+import Home from './components/home.component';
 
-function App() {
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#ffffff',
+      dark: 'rgb(0,0,0)',
+    },
+    secondary: {
+      main: '#E26751',
+      //main: 'rgb(0,0,0)',
+    },
+    
+  },
+});
+
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="height100">
+      <ThemeProvider theme={theme}>
+        <Home />
+      </ThemeProvider>
     </div>
   );
 }
