@@ -1,5 +1,6 @@
 import { Tabs, Tab, makeStyles } from "@material-ui/core";
 import { useState } from "react";
+import TabDetails from "./tab-details.component";
 
 const tabContent = [
   {
@@ -65,37 +66,17 @@ const MainContent = (props) => {
   console.log('activeIndexTab', activeIndexTab);
   return (
     <div className={classes.root}>
-      {false  &&  (<button onClick={temp}> click me</button>)}
+
+      {false && (<button onClick={temp}> click me</button>)}
 
       <div className={classes.tabContent}>
-        {activeIndexTab === 0 &&
-          (<div>
-            <div>{tabContent[0].header}</div>
-            <div>{tabContent[0].title}</div>
-            <div>{tabContent[0].details}</div>
-          </div>)
-        }
-        {activeIndexTab === 1 &&
-          (<div>
-            <div>{tabContent[1].header}</div>
-            <div>{tabContent[1].title}</div>
-            <div>{tabContent[1].details}</div>
-          </div>)
-        }
-        {activeIndexTab === 2 &&
-          (<div>
-            <div>{tabContent[2].header}</div>
-            <div>{tabContent[2].title}</div>
-            <div>{tabContent[2].details}</div>
-          </div>)
-        }
-        {activeIndexTab === 3 &&
-          (<div>
-            <div>{tabContent[3].header}</div>
-            <div>{tabContent[3].title}</div>
-            <div>{tabContent[3].details}</div>
-          </div>)
-        }
+     
+          <TabDetails
+            header={tabContent[activeIndexTab].header}
+            title={tabContent[activeIndexTab].title}
+            details={tabContent[activeIndexTab].details}
+          />
+
       </div>
       <div className={classes.tabs}>
 
