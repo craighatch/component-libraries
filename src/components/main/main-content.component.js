@@ -42,25 +42,6 @@ const useStyles = makeStyles({
   },
   tabs: {
     minHeight: '75px'
-  },
-  text: {
-    color: 'rgb(255, 255, 255)',
-    fontFamily: 'Lato, sans-serif',
-
-  },
-  header: {
-    fontSize: '16px',
-    lineHeight: '26px',
-    fontWeight: '900'
-  },
-  title: {
-    fontSize: '48px',
-    lineHeight: '64px',
-  },
-  details: {
-    fontSize: '20px',
-    lineHeight: '32px',
-    fontWeight: 'normal'
   }
 });
 
@@ -77,13 +58,12 @@ const MainContent = (props) => {
 
   return (
     <div className={classes.root}>
-      {/* Exercise 1:  (a)refactor this code to a reuseable component (b) use makeStyles to style like the Credera website*/}
       <div className={classes.tabContent}>
         {activeIndexTab === 0 &&
           (<div>
-            <div className={`${classes.text} ${classes.header}`}>{tabContent[0].header}</div>
-            <div className={`${classes.text} ${classes.title}`}>{tabContent[0].title}</div>
-            <div className={`${classes.text} ${classes.details}`}>{tabContent[0].details}</div>
+            <div>{tabContent[0].header}</div>
+            <div>{tabContent[0].title}</div>
+            <div>{tabContent[0].details}</div>
           </div>)
         }
         {activeIndexTab === 1 &&

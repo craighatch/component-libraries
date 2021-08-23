@@ -1,7 +1,5 @@
-import { makeStyles, MenuItem } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import Menu from '@material-ui/core/Menu';
-import { useState } from 'react';
 
 const useStyles = makeStyles({
   root: {
@@ -26,32 +24,11 @@ const Header = (props) => {
 
   const menuItems = ["Services", "Industries", "Our Firm", 'Careers', 'Insights'];
 
-  const [anchorEl, setAnchorEl] = useState(null);
-
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = (event) => {
-    setAnchorEl(null);
-    console.log(`User clicked on ${event.target.innerText}`);
-  };
-
   return (
     <div className={classes.root}>
       <div>CREDERA</div>
 
-      <MenuIcon color='secondary' onClick={handleClick} />
-      
-      <Menu
-        anchorEl={anchorEl}
-        keepMounted
-        open={!!anchorEl}
-        onClose={handleClose}
-        
-      >
-        {menuItems.map(menuItem => (<MenuItem key={menuItem} onClick={handleClose}>{menuItem}</MenuItem>))}
-      </Menu>
+      <MenuIcon color='secondary'/>
     </div>
   );
 }
